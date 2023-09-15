@@ -2,3 +2,25 @@
     padding: 10px;
     margin: auto;
 }
+
+.heading{
+    text-align: center;
+    padding: 15px;
+    color: rgb(137, 123, 98);
+
+}
+.paragraph{
+    padding: 35px;
+    font-size: larger;
+    color: black;
+    background-color: rgb(206, 187, 187);
+}
+.btn{
+    margin: 5px;
+    margin-left: 45px;
+}
+.table{
+    border: 5px solid black;
+    padding: 2%;
+    
+}

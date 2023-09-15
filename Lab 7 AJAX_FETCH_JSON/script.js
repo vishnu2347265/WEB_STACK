@@ -15,7 +15,7 @@ fetchButton.addEventListener("click", async ()=> {
 			{
 				var book=document.createElement('div');
 				book.className="bookdata";
-				book.innerHTML=  `Title: ${booklist[i].title}   Author: ${booklist[i].author}`;
+				book.innerHTML=  `<b> Title:</b> ${booklist[i].title} <br> <b> Author: </b> ${booklist[i].author}  <br> <b> Description: </b> ${booklist[i].description} `;
 				document.getElementById("booklist").appendChild(book);
 			}
 		})
