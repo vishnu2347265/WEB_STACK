@@ -25,7 +25,7 @@
     }
     
     // Function to check if passwords match
-    function checkPasswordMatch() {
+    function checkPasswordMatch() {   
       const password = passwordInput.value;
       const confirmPassword = confirmPasswordInput.value;
       const isValid = password === confirmPassword && password.length >= 8;
