@@ -1,0 +1,33 @@
+.product {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    display: inline-block;
+    width: 200px;
+    text-align: center;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+.search{
+    margin: 1rem;
+    width: auto;
+}
+#product-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.bodyc{
+    background-color: #f7f7f3;
+}
+#sort{
+    margin: 1rem;
+}
+
+.mainb{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
