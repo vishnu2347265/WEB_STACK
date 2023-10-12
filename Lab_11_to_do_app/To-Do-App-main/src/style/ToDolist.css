@@ -1,0 +1,103 @@
+.listMain{
+    background-color: white;
+    border-radius: 50px;
+    display: block;
+    justify-content: center;
+    margin: 2% 5%;
+    box-shadow: -7px -5px 33px 35px rgba(0,0,0,0.1);
+   position: fixed;
+   width: 90%;
+    
+}
+.listBanner{
+    background-image: url(../img/bannerBG.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+    padding: 15% 10%;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.list{
+    padding:1% 5%;
+    list-style: none;
+    max-height: 30vh;
+    overflow: auto;
+}
+
+.list .li{
+    border-bottom: .1px solid green;
+    padding: 5px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    justify-content: space-between;
+}
+
+.liIcon{
+    width: 10%;
+}
+.liIcon button{
+    border-radius: 5px;
+    border: 1px solid orange;
+    margin-right: 5%;
+    padding: 5px 10px;
+    background-color: white;
+    color: orange;
+}
+.liIcon button:hover{
+    border-radius: 5px;
+    border: 1px solid green;
+    margin-right: 5%;
+    padding: 5px 10px;
+    background-color: white;
+    color: green;
+}
+.newList{
+    padding: 5px 10px;
+    background-color: white;
+    color: orange;
+    border: 1px solid white;
+}
+.newList:hover{
+    padding: 5px 10px;
+    color: green;
+}
+.addNew-li{
+    padding: 5px 0px;
+    
+}
+.modalClose{
+    color: white;
+    background-color: green;
+    border: 1px solid green;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+.modalClose:hover{
+    color: green;
+    background-color: white;
+
+}
+.modalOpen{
+    color: white;
+    background-color: orange;
+    border: 1px solid orange;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+.modalOpen:hover{
+    color: orange;
+    background-color: white;
+
+}
+input{
+    border: 1px solid green;
+    border-radius: 10px;
+    width: 80%;
+}
+.modal{
+ color: orange;
+}
