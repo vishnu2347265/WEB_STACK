@@ -1,0 +1,133 @@
+/*nav*/
+
+form{
+    padding-right: 2%;
+}
+.nav{
+    background-color: transparent;
+    min-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1% 0%;  
+}
+.btn{
+    background-color: transparent;
+    border: 1px solid orange;
+    color: orange;
+}
+.btn:hover{
+    background-color: transparent;
+    border: 1px solid white;
+    color: orange;
+}
+.logo {
+    font-family: Arial, sans-serif; 
+    text-align: center;
+    padding-left: 2%;
+    font-size: 24px; 
+    color: white;
+}
+
+.mr-sm-2{
+    background-color: white;
+    border: 1px solid orange;
+    border-radius: 5px;
+    padding: 3% 1%;
+
+}
+::-ms-input-placeholder {
+    color: red;
+  }
+
+.ink {
+    color: #38628e; 
+}
+.imagination {
+    color: #e67e22; 
+}
+
+.bookstore {
+    color: #2980b9; 
+}
+.search{
+    border-radius: 10px;
+    border: 1px solid orange;
+    padding: 5px 20px;
+}
+
+/*section 1*/
+.Main_head_app {
+    margin: 0;
+    padding-top: 20%;
+    -webkit-backdrop-filter: blur(5rem);
+    backdrop-filter: blur(5px);
+    padding-bottom: 30%;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.our_collection {
+    background-color: black;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+}
+
+.our_collection h1 {
+    color: white;
+    text-align: center;
+    padding-top: 8%;
+}
+
+.g-4 {
+    padding: 5% 10%;
+}
+
+#container {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+}
+
+#container img {
+    padding: 2%;
+    width: 50%;
+    height: 50%;
+}
+
+#container button:hover {
+    padding: 2% 10%;
+    color: black;
+    border: 2px solid black;
+    background-color: white;
+    border-radius: 50px;
+}
+
+#container button {
+    padding: 2% 10%;
+    color: white;
+    border: 2px solid white;
+    background-color: black;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.card {
+
+    width: 30%;
+    height: auto;
+
+}
+
+.card-body {
+    text-align: justify;
+}
+.modal{
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+.topNavImg{
+    height: 70px;
+    border-radius: 3rem;
+}

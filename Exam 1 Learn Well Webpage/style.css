@@ -1,0 +1,23 @@
+
+body{
+    background-image: url(img.webp);
+    top: 10%;
+    background-color: aqua;
+    background-position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.flex-container{
+    align-items: center;
+
+}
+
+.footer {
+    
+    text-align: center;
+    padding: 3px;
+    background-color: DarkSalmon;
+    color: white;
+
+}  

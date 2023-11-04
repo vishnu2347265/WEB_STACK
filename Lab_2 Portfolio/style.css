@@ -1,0 +1,252 @@
+body {
+    background-image: linear-gradient(to right, #d7d2cc 0%, #304352 100%);
+    font-family: 'Josefin Sans', sans-serif;
+
+}
+
+.home_main {
+    background-image: url(3239480.webp);
+    min-height: 100vh;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.home_second {
+    min-height: 80vh;
+    background-color: white;
+}
+
+.home_main_heading {
+    color: white;
+    width: 35%;
+    position: relative;
+    padding-top: 10%;
+    left: 35%;
+    margin: -25px 0 0 -25px;
+}
+
+.home_main_heading h1 {
+    text-align: center;
+    margin-top: 10%;
+    font-size: 75px;
+}
+
+.home_main_heading p {
+    text-align: center;
+    margin-top: 4%;
+    font-size: larger;
+}
+
+.nav li a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+
+
+
+/* contact page */
+.con_heading {
+    font-family: 'Molengo', sans-serif;
+    color: #000;
+    font-size: 48px;
+    text-align: center;
+    margin-top: 5%;
+}
+
+.conc_main {
+    margin-top: 5%;
+    display: flex;
+    margin-left: 28%;
+}
+
+.cont_right {
+
+    color: #000;
+    font-family: 'Molengo', sans-serif;
+    font-size: large;
+    padding-inline: 5%;
+}
+
+.cont_right a {
+    color: #000;
+}
+
+form {
+    width: 400px
+}
+
+hr {
+    color: white;
+}
+
+#exampleInputEmail1 {
+    background-color: transparent;
+    border: 1px solid black;
+}
+
+#exampleInputPassword1 {
+    background-color: transparent;
+    border: 1px solid black;
+}
+
+.cont_left .btn {
+    width: 400px;
+}
+
+.contact-icon1 {
+    display: flex;
+}
+
+.copyright {
+    color: gray;
+    font-family: 'Molengo', sans-serif;
+    font-size: large;
+}
+
+.social-media-list {
+    position: relative;
+    font-size: 22px;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.social-media-list li a {
+    color: #fff;
+}
+
+.social-media-list li {
+    position: relative;
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    margin: 10px 3px;
+    line-height: 60px;
+    border-radius: 50%;
+    color: #fff;
+    background-color: rgb(27, 27, 27);
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+.social-media-list li:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    opacity: 0;
+    box-shadow: 0 0 0 1px #333333;
+    transition: all .2s ease-in-out;
+}
+
+.social-media-list li:hover {
+    background-color: #fff;
+}
+
+.social-media-list li:hover:after {
+    opacity: 1;
+    transform: scale(1.12);
+    transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
+}
+
+.social-media-list li:hover a {
+    color: #000;
+}
+
+button a{
+    text-decoration: none;
+    color: white;
+    width: auto;
+}
+
+.team-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    border-radius: 10px;
+  }
+  
+  .team-gallery>div {
+    flex-basis: 350px;
+    padding: 2%;
+  }
+  
+  .team-gallery div a img {
+    object-fit: cover;
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    border: 5px solid #fff;
+    border-radius: 5px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+  }
+  
+  .team-gallery div a img:hover {
+  
+    box-shadow: #000 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+  }
+
+.about_third {
+
+    margin: 10%;
+    background-color: #d7d2cc;
+    border-radius: 60px;
+    display: flex;
+}
+
+.about_third_heading h1 {
+    padding: 5%;
+}
+
+.about_third_1 {
+    padding: 5%;
+}
+
+.about_third_1 p {
+    padding-bottom: 5%;
+}
+
+.about_third_2 {
+    padding: 5%;
+}
+
+.about_third_2 p {
+    padding-bottom: 5%;
+}
+
+
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* gap: 10px; */
+    /* list-style-type: none; */
+}
+
+.image-gallery img {
+  width: 200px;
+  height: 200px;
+  margin: 5px;
+    /* gap: 10px; */
+    /* list-style-type: none; */
+    border-radius: 8px;
+}
+
+.image-gallery img:hover {
+    box-shadow: 0px 0px 10px gray;
+    transform: scale(1.1);
+      /* gap: 10px; */
+      /* list-style-type: none; */
+  }
+
+
+

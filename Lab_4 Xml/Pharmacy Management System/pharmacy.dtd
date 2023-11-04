@@ -1,0 +1,10 @@
+<!ELEMENT pharmacy (medicine+)>
+<!ELEMENT medicine (medicine_id, name, price, quantity, category, manufacturer, manufacturing_date, expiry_date)>
+<!ELEMENT medicine_id (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT quantity (#PCDATA)>
+<!ELEMENT category (#PCDATA)>
+<!ELEMENT manufacturer (#PCDATA)>
+<!ELEMENT manufacturing_date (#PCDATA)>
+<!ELEMENT expiry_date (#PCDATA)>

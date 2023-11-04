@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<products xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="myEcom.xsd">
+    <product>
+        <product_id>101</product_id>
+        <product_name>macbook air</product_name>
+        <price>350</price>
+        <available_quantity>
+        20</available_quantity>
+        <category>Electronics</category>
+    </product>
+    <product>
+        <product_id>501</product_id>
+        <product_name>Gucci zip jacket</product_name>
+        <price>280</price>
+        <available_quantity>
+        8</available_quantity>
+        <category>Clothing</category>
+    </product>
+    <product>
+        <product_id>201</product_id>
+        <product_name>rich dad poor dad</product_name>
+        <price>12</price>
+        <available_quantity>
+        147</available_quantity>
+        <category>Books</category>
+    </product>
+</products>
