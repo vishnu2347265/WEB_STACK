@@ -1,72 +1,172 @@
-    
-    const form = document.getElementById('registration-form');
-    const fullNameInput = document.getElementById('full-name');
-    const emailInput = document.getElementById('email');
-    // Similar variables for other inputs
-    const passwordInput = document.getElementById('password');
-    const confirmPasswordInput = document.getElementById('confirm-password');
-    const dobInput = document.getElementById('dob');
-    const submitBtn = document.getElementById('submit-btn');
-    
-    // Function to validate full name
-    function validateFullName() {
-      const fullName = fullNameInput.value.trim();
-      const isValid = /^[A-Za-z\s]{3,}$/.test(fullName);
-      showValidationStatus(fullNameInput, isValid);
-      return isValid;
+const usernameEl = document.querySelector('#username');
+const emailEl = document.querySelector('#email');
+const passwordEl = document.querySelector('#password');
+const confirmPasswordEl = document.querySelector('#confirm-password');
+const dob =  document.querySelector('#dob');
+
+const form = document.querySelector('#signup');
+
+
+const checkUsername = () => {
+
+    let valid = false;
+
+    const min = 3,
+        max = 25;
+
+    const username = usernameEl.value.trim();
+
+    if (!isRequired(username)) {
+        showError(usernameEl, 'Username cannot be blank.');
+    } else if (!isBetween(username.length, min, max)) {
+        showError(usernameEl, `Username must be between ${min} and ${max} characters.`)
+    } else {
+        showSuccess(usernameEl);
+        valid = true;
     }
-    
-    // Implement similar validation functions for email, password, confirm password, and DOB
-    
-    // Function to show validation status
-    function showValidationStatus(input, isValid) {
-      const statusElement = document.getElementById(`${input.id}-status`);
-      statusElement.textContent = isValid ? '✅' : '❌';
+    return valid;
+};
+
+
+const checkEmail = () => {
+    let valid = false;
+    const email = emailEl.value.trim();
+    if (!isRequired(email)) {
+        showError(emailEl, 'Email cannot be blank.');
+    } else if (!isEmailValid(email)) {
+        showError(emailEl, 'Email is not valid.')
+    } else {
+        showSuccess(emailEl);
+        valid = true;
     }
-    
-    // Function to check if passwords match
-    function checkPasswordMatch() {   
-      const password = passwordInput.value;
-      const confirmPassword = confirmPasswordInput.value;
-      const isValid = password === confirmPassword && password.length >= 8;
-      showValidationStatus(confirmPasswordInput, isValid);
-      return isValid;
+    return valid;
+};
+
+const checkPassword = () => {
+    let valid = false;
+
+
+    const password = passwordEl.value.trim();
+
+    if (!isRequired(password)) {
+        showError(passwordEl, 'Password cannot be blank.');
+    } else if (!isPasswordSecure(password)) {
+        showError(passwordEl, 'Password must has at least 8 characters that include at least 1 lowercase character, 1 uppercase characters, 1 number, and 1 special character in (!@#$%^&*)');
+    } else {
+        showSuccess(passwordEl);
+        valid = true;
     }
-    
-    // Function to calculate age from date of birth
-    function calculateAge(dob) {
-      const today = new Date();
-      const birthDate = new Date(dob);
-      let age = today.getFullYear() - birthDate.getFullYear();
-      const months = today.getMonth() - birthDate.getMonth();
-      if (months < 0 || (months === 0 && today.getDate() < birthDate.getDate())) {
-        age--;
-      }
-      return age;
+
+    return valid;
+};
+
+const checkConfirmPassword = () => {
+    let valid = false;
+    // check confirm password
+    const confirmPassword = confirmPasswordEl.value.trim();
+    const password = passwordEl.value.trim();
+
+    if (!isRequired(confirmPassword)) {
+        showError(confirmPasswordEl, 'Please enter the password again');
+    } else if (password !== confirmPassword) {
+        showError(confirmPasswordEl, 'The password does not match');
+    } else {
+        showSuccess(confirmPasswordEl);
+        valid = true;
     }
-    
-    // Event listeners for real-time validation
-    fullNameInput.addEventListener('input', validateFullName);
-    // Similar listeners for other inputs
-    passwordInput.addEventListener('input', checkPasswordMatch);
-    confirmPasswordInput.addEventListener('input', checkPasswordMatch);
-    dobInput.addEventListener('input', () => {
-      const age = calculateAge(dobInput.value);
-      submitBtn.disabled = age < 18;
-    });
-    
-    // Event listener for form submission
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-    
-      const isFullNameValid = validateFullName();
-      // Similar validation checks for other fields
-      const isPasswordMatch = checkPasswordMatch();
-      const age = calculateAge(dobInput.value);
-    
-      if (isFullNameValid && isPasswordMatch && age >= 18) {
-        // Form submission logic
-        alert('Registration successful!');
-      }
-    });
-    
+
+    return valid;
+};
+
+const isEmailValid = (email) => {
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+};
+
+const isPasswordSecure = (password) => {
+    const re = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
+    return re.test(password);
+};
+
+const isRequired = value => value === '' ? false : true;
+const isBetween = (length, min, max) => length < min || length > max ? false : true;
+
+
+const showError = (input, message) => {
+    // get the form-field element
+    const formField = input.parentElement;
+    // add the error class
+    formField.classList.remove('success');
+    formField.classList.add('error');
+
+    // show the error message
+    const error = formField.querySelector('small');
+    error.textContent = message;
+};
+
+const showSuccess = (input) => {
+    // get the form-field element
+    const formField = input.parentElement;
+
+    // remove the error class
+    formField.classList.remove('error');
+    formField.classList.add('success');
+
+    // hide the error message
+    const error = formField.querySelector('small');
+    error.textContent = '';
+}
+
+
+form.addEventListener('submit', function (e) {
+    // prevent the form from submitting
+    e.preventDefault();
+
+    // validate fields
+    let isUsernameValid = checkUsername(),
+        isEmailValid = checkEmail(),
+        isPasswordValid = checkPassword(),
+        isConfirmPasswordValid = checkConfirmPassword();
+
+    let isFormValid = isUsernameValid &&
+        isEmailValid &&
+        isPasswordValid &&
+        isConfirmPasswordValid;
+
+    // submit to the server if the form is valid
+    if (isFormValid) {
+
+    }
+});
+
+
+const debounce = (fn, delay = 500) => {
+    let timeoutId;
+    return (...args) => {
+        // cancel the previous timer
+        if (timeoutId) {
+            clearTimeout(timeoutId);
+        }
+        // setup a new timer
+        timeoutId = setTimeout(() => {
+            fn.apply(null, args)
+        }, delay);
+    };
+};
+
+form.addEventListener('input', debounce(function (e) {
+    switch (e.target.id) {
+        case 'username':
+            checkUsername();
+            break;
+        case 'email':
+            checkEmail();
+            break;
+        case 'password':
+            checkPassword();
+            break;
+        case 'confirm-password':
+            checkConfirmPassword();
+            break;
+    }
+}));
